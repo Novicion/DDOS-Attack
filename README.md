@@ -1,55 +1,57 @@
+
 # 📚 Proyecto Educativo
 
-Bienvenido/a a este **pequeño proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar ciberseguridad. 🎉 
+Bienvenido/a a este **proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar ciberseguridad. 🎉
 
 ---
 
 ## 🧐 ¿De qué se trata?
-Este proyecto tiene como objetivo ayudarte a comprender como es un ataque de DDOS. 💻✨ 
+Este proyecto tiene como objetivo ayudarte a comprender cómo funciona un ataque de DDoS (Denegación de Servicio Distribuida). 💻✨ 
 
-> ⚠️ **DISCLAIMER:** Este proyecto es únicamente para fines educativos y de investigación en ciberseguridad. No está destinado para uso malicioso. El uso de este script sin autorización del propietario del sistema objetivo es ilegal y puede acarrear sanciones graves. El autor no se hace responsable del mal uso de este script.
+> ⚠️ **DISCLAIMER:**  
+> Este proyecto es únicamente para fines educativos y de investigación en ciberseguridad. No está destinado para uso malicioso.  
+> **El uso de este script sin autorización del propietario del sistema objetivo es ilegal** y puede acarrear sanciones graves.  
+> El autor no se hace responsable del mal uso de este script.
 
 ---
 
 ## 🚀 Cómo comenzar
-Sigue estos sencillos pasos para poner en marcha el proyecto en tu entorno local:
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 1. **Clona el repositorio:**
    ```bash
    git clone https://github.com/Novicion/DDOS-Attack.git
+   ```
 
-# 🛠️ Herramientas utilizadas
-   - Lenguaje: Python 
-   - Librerías: threading, socket
-
-# 📫 Contacto
-   Si tienes preguntas o sugerencias, no dudes en escribirme:
-      **✉️ noviciondev@gmail.com**
-
-## **What Does the Script Do?**
-The script simulates a **DDoS attack** (Distributed Denial of Service) by:
-1. Creating multiple threads to simulate high traffic.
-2. Sending a large number of HTTP requests to overwhelm the target server.
-3. Using a fake IP address to disguise the origin of the traffic.
-
-This kind of attack is used maliciously to disrupt the availability of websites or services. However, here it is provided solely to demonstrate how such attacks function.
+2. **Instala los requisitos necesarios:**  
+   Este script utiliza Python y las librerías `threading` y `socket`, incluidas por defecto en Python.
 
 ---
 
-## **How to Mitigate a DDoS Attack**
+## 🛠️ ¿Qué hace el script?
+Este script simula un **ataque DDoS** básico al:
+1. Crear múltiples hilos para simular tráfico masivo.
+2. Enviar una gran cantidad de solicitudes HTTP para saturar el servidor objetivo.
+3. Usar una IP falsa para ocultar el origen del tráfico.
 
-### 1. **Filter Suspicious Traffic**
-- Use firewall rules to block malicious IPs.
-- Example using `iptables`:
+⚠️ **Nota:** Aunque este tipo de ataques se usa maliciosamente para interrumpir servicios, este proyecto tiene fines educativos para demostrar cómo funcionan y cómo defenderse de ellos.
+
+---
+
+## 🛡️ Cómo mitigar un ataque DDoS
+
+### 1. **Filtrar tráfico sospechoso**
+- Usa reglas de firewall para bloquear IPs maliciosas.
+- Ejemplo con `iptables`:
   ```bash
   sudo iptables -A INPUT -s 182.21.20.32 -j DROP
   ```
 
 ---
 
-### 2. **Rate Limiting**
-- Configure servers to limit the number of requests from a single IP.
-- Example with **Nginx**:
+### 2. **Limitar la tasa de solicitudes (Rate Limiting)**
+- Configura tu servidor para limitar la cantidad de solicitudes desde una IP en un período de tiempo.
+- Ejemplo con **Nginx**:
   ```nginx
   http {
       limit_req_zone $binary_remote_addr zone=one:10m rate=30r/s;
@@ -63,36 +65,37 @@ This kind of attack is used maliciously to disrupt the availability of websites 
 
 ---
 
-### 3. **Use Specialized Services**
-- Employ DDoS protection services like **Cloudflare**, **Akamai**, or **AWS Shield** to filter traffic and absorb large-scale attacks.
+### 3. **Usar servicios especializados**
+- Implementa servicios como **Cloudflare**, **Akamai** o **AWS Shield** para filtrar tráfico y absorber ataques a gran escala.
 
 ---
 
-### 4. **Load Balancing**
-- Distribute traffic across multiple servers using load balancers like **HAProxy**.
+### 4. **Balanceo de carga**
+- Distribuye el tráfico entre varios servidores para evitar la saturación de uno solo.
+- Herramientas recomendadas: **HAProxy**.
 
 ---
 
-### 5. **Content Delivery Networks (CDN)**
-- Use CDNs such as **Cloudflare** or **Fastly** to offload traffic to distributed servers.
+### 5. **Redes de entrega de contenido (CDN)**
+- Usa CDNs como **Cloudflare** o **Fastly** para reducir la carga directa en el servidor principal.
 
 ---
 
-### 6. **Validate Incoming Requests**
-- Implement CAPTCHA or challenge-response mechanisms to verify users.
+### 6. **Validar solicitudes entrantes**
+- Implementa sistemas como CAPTCHA para confirmar que las solicitudes provienen de usuarios legítimos y no de bots.
 
 ---
 
-### 7. **Monitoring and Alerts**
-- Use tools like **Zabbix**, **Prometheus**, or **Grafana** to detect abnormal traffic patterns.
-- Set up alerts for unusual traffic spikes.
+### 7. **Monitoreo y alertas**
+- Usa herramientas como **Zabbix**, **Prometheus** o **Grafana** para detectar patrones de tráfico anómalos.
+- Configura alertas automáticas para picos de tráfico inusuales.
 
 ---
 
-### 8. **Optimize Server Resources**
-- Increase server capacity (CPU, RAM, bandwidth).
-- Adjust server connection limits:
-  Example for **Apache**:
+### 8. **Optimización del servidor**
+- Incrementa los recursos del servidor (CPU, RAM, ancho de banda).
+- Ajusta los límites de conexión en el servidor:
+  Ejemplo en **Apache**:
   ```conf
   <IfModule mpm_prefork_module>
       MaxClients 100
@@ -102,37 +105,37 @@ This kind of attack is used maliciously to disrupt the availability of websites 
 
 ---
 
-### 9. **SYN Cookies**
-- Protect against SYN flood attacks by enabling SYN cookies:
+### 9. **Cookies SYN**
+- Protege tu servidor contra ataques de tipo SYN flood activando cookies SYN:
   ```bash
   sudo sysctl -w net.ipv4.tcp_syncookies=1
   ```
 
 ---
 
-### 10. **Segment and Redundancy**
-- Divide your infrastructure into segments and use redundant systems.
+### 10. **Segmentación y redundancia**
+- Divide tu infraestructura en segmentos y usa sistemas redundantes para reducir el impacto de un ataque.
 
 ---
 
-## **Example: Detect and Block Malicious IPs**
+## 📜 Ejemplo: Detectar y bloquear IPs maliciosas
 
 ```python
 import os
 from collections import Counter
 
-log_file = "/var/log/access.log"  # Path to the web server access log
+log_file = "/var/log/access.log"  # Ruta al archivo de logs del servidor web
 
 def detect_suspicious_ips():
     with open(log_file, "r") as file:
         ips = [line.split()[0] for line in file]
     ip_counts = Counter(ips)
     for ip, count in ip_counts.items():
-        if count > 100:  # Threshold for suspicious activity
+        if count > 100:  # Umbral de solicitudes sospechosas
             block_ip(ip)
 
 def block_ip(ip):
-    print(f"Blocking IP: {ip}")
+    print(f"Bloqueando IP: {ip}")
     os.system(f"iptables -A INPUT -s {ip} -j DROP")
 
 detect_suspicious_ips()
@@ -140,10 +143,13 @@ detect_suspicious_ips()
 
 ---
 
-## **Legal Note**
-Sharing this script aligns with GitHub's policies on ethical cybersecurity education. Ensure you:
-- Use this in **controlled environments only** (e.g., virtual machines, private networks).
-- Include this disclaimer in any distribution of this project.
+## ⚖️ Nota legal
+El propósito de este proyecto es alinear el aprendizaje con las políticas éticas de ciberseguridad.  
+**Úsalo únicamente en entornos controlados** (e.g., máquinas virtuales, redes privadas) y siempre incluye esta advertencia en cualquier distribución.
 
-## **License**
-This project is licensed under the [MIT License](LICENSE). See the `LICENSE` file for details.
+---
+
+## 📫 Contacto
+Si tienes preguntas o sugerencias, no dudes en escribirme:  
+✉️ **noviciondev@gmail.com**
+
