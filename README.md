@@ -1,6 +1,6 @@
 # 📚 Proyecto Educativo
 
-Bienvenido/a a este **pequeño proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar pruebas de software. 🎉 
+Bienvenido/a a este **pequeño proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar Cyber Seguridad. 🎉 
 
 ---
 
