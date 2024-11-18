@@ -1,13 +1,13 @@
 # 📚 Proyecto Educativo
 
-Bienvenido/a a este **pequeño proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar Cyber Seguridad. 🎉 
+Bienvenido/a a este **pequeño proyecto educativo**, diseñado especialmente para personas interesadas en aprender y practicar ciberseguridad. 🎉 
 
 ---
 
 ## 🧐 ¿De qué se trata?
 Este proyecto tiene como objetivo ayudarte a comprender como es un ataque de DDOS. 💻✨ 
 
-> ⚠️ **Nota:** Recuerda utilizar este proyecto de manera ética y responsable. Es exclusivamente para fines educativos.
+> ⚠️ **DISCLAIMER:** Este proyecto es únicamente para fines educativos y de investigación en ciberseguridad. No está destinado para uso malicioso. El uso de este script sin autorización del propietario del sistema objetivo es ilegal y puede acarrear sanciones graves. El autor no se hace responsable del mal uso de este script.
 
 ---
 
